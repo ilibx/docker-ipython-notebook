@@ -1,4 +1,4 @@
-#### ipython notebook
+# ipython notebook
 
 This is the build I use to study for the "Machine Learning" course of Andrew Ng at Coursera.
 It basically covers everything you need, since it is possible to use octave code in the notebooks via the "octavemagic" extension and the magic function "%%octave".
@@ -6,7 +6,7 @@ It's sometimes a bit hard to debug in ipython notebook, because all the code in 
 
 This installation is a bit bloated (no --no-install-recommends for apt-get) but covers numpy, scipy, matplotlib, octave and ipython-notebook for a prompt start.
 
-### Installation
+## Installation
 
 ```
 docker pull temal/ipython-notebook:latest
@@ -15,7 +15,9 @@ docker pull temal/ipython-notebook:latest
 There are two ways to run the container. 
 
 
-## Data consistent
+## Usage
+
+### Data consistent
 
 **RECOMMENDED WAY**
 
@@ -42,11 +44,12 @@ After the above steps, you can start the container with:
 docker run -dp 8000:8888 -v /exported/ipython:/ipython temal/ipython-notebook
 ```
 
-## Data-inconsistent
+### Data-inconsistent
 
 **UNSAFE**
 
 No data is saved, no password is set and no SSL certificate is provided!
+For quick fun:
 
 ```
 docker run -dp 8000:8888 temal/ipython-notebook
