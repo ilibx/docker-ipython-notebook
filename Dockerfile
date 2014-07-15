@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
 RUN pip install numpy scipy 
 RUN pip install matplotlib Pygments oct2py ipython[notebook]
 
+ADD ipython.py /ipython.py
+RUN chmod o+x /ipython.py
+
 RUN groupadd -r ipython && \
     useradd -m -r -g ipython -s /sbin/nologin -c "ipython user" ipython && \
     mkdir /ipython && \
@@ -35,9 +38,4 @@ VOLUME ["/ipython"]
 EXPOSE 8888
 WORKDIR /ipython
 
-USER root
-ADD ipython.py /ipython.py
-RUN chmod +x /ipython.py
-
-USER ipython
 CMD /ipython.py
