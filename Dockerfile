@@ -1,6 +1,23 @@
-FROM temal/python
+FROM debian:jessie
 
 MAINTAINER Malte Krupa <dockerfile@nafn.de>
+
+# Prepare python environment
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    pkg-config \
+    python \
+    python-pip \
+    python-dev \
+    build-essential \
+    make \
+    gcc \
+    locales
+
+RUN dpkg-reconfigure locales && \
+    locale-gen C.UTF-8 && \
+    update-locale LANG=C.UTF-8
+ENV LC_ALL C.UTF-8
 
 RUN apt-get update && apt-get install -y \
     pandoc \
