@@ -32,9 +32,9 @@ def consider_certificate_and_start():
     cert_file = '/ipython/certificate.pem'
     if os.path.isfile(cert_file):
         call(["/usr/local/bin/ipython", "notebook", \
-                "--certfile=" + cert_file, "--ip=*"])
+                "--certfile=" + cert_file, "--ip=*", "--pylab=inline"])
     else:
-        call(["/usr/local/bin/ipython", "notebook", "--ip=*"])
+        call(["/usr/local/bin/ipython", "notebook", "--ip=*", "--pylab=inline"])
 
 if __name__ == '__main__':
     check_update_password()
