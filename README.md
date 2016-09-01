@@ -41,7 +41,7 @@ openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=0O/ST=CHANGEM
 After the above steps, you can start the container with:
 
 ```
-docker run -dp 8000:8888 -v /exported/ipython:/ipython temal/ipython-notebook
+docker run -dp 8888:8888 --name notebook -v /exported/ipython:/ipython temal/ipython-notebook
 ```
 
 ### Data-inconsistent
@@ -52,5 +52,5 @@ No data is saved, no password is set and no SSL certificate is provided!
 For quick fun:
 
 ```
-docker run -dp 8000:8888 temal/ipython-notebook
+docker run -dp 8888:8888 --name notebook temal/ipython-notebook
 ```
