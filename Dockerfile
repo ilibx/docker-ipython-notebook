@@ -11,6 +11,7 @@ RUN apt-get update && \
     python-dev \
     build-essential \
     make \
+    vim \
     gcc \
     locales
 
