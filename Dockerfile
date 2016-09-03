@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     xfig \
     libblas3
 
-RUN pip install numpy scipy 
+RUN pip install numpy scipy sympy
 RUN pip install matplotlib Pygments oct2py ipython[notebook]
 
 ADD ipython.py /ipython.py
