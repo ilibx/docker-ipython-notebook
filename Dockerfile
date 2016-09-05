@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
     libblas3
 
 RUN pip install numpy scipy sympy pandas
-RUN pip install matplotlib Pygments oct2py ipython[notebook]
+RUN pip install matplotlib Pygments oct2py ipython[notebook] openpyxl
 
 ADD ipython.py /ipython.py
 RUN chmod o+x /ipython.py
