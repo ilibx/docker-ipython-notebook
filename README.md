@@ -6,6 +6,12 @@ It's sometimes a bit hard to debug in ipython notebook, because all the code in 
 
 This installation is a bit bloated (no --no-install-recommends for apt-get) but covers numpy, scipy, matplotlib, octave and ipython-notebook for a prompt start.
 
+## Build the Dockerfile
+
+```
+docker build -t <image name> .
+```
+
 ## Installation
 
 ```
