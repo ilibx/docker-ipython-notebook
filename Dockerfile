@@ -34,6 +34,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install numpy scipy sympy pandas
 RUN pip install matplotlib Pygments oct2py ipython[notebook] openpyxl pybrain
+RUN pip install dlib
+RUN apt install python-skimage-lib
 
 ADD ipython.py /ipython.py
 RUN chmod o+x /ipython.py
