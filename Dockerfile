@@ -36,6 +36,8 @@ RUN pip install numpy scipy sympy pandas
 RUN pip install matplotlib Pygments oct2py ipython[notebook] openpyxl pybrain
 RUN pip install dlib
 RUN apt install python-skimage-lib
+RUN pip install octave_kernel
+RUN python -m octave_kernel.install
 
 ADD ipython.py /ipython.py
 RUN chmod o+x /ipython.py
